@@ -1,59 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hannah & Zak Travels</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-        h1 {
-            color: #111;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .photo-card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .photo-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hannah & Zak Travels</title>
+
+  <!-- Google font (change to another family if you like) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---- EDITABLE: change these variables to update the site colors ---- */
+    :root{
+      --accent: #ff6b6b; /* accent color — change to your favorite */
+      --bg: #f7f7f8;
+      --text: #222;
+      --muted: #666;
+      --card: #ffffff;
+      --maxw: 980px;
+    }
+
+    /* Page layout */
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      padding: 40px 20px;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .container{ max-width: var(--maxw); margin: 0 auto; }
+
+    header{
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    h1{ margin: 0; font-size: 2.2rem; letter-spacing: -0.01em; }
+    .subtitle{ color: var(--muted); margin-top: 6px; font-size: 1rem; }
+
+    /* Hero */
+    .hero{
+      background: linear-gradient(135deg, rgba(255,107,107,0.08), rgba(0,0,0,0));
+      padding: 18px;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .hero .intro{ text-align: left; }
+    .badge{
+      display: inline-block;
+      background: var(--card);
+      border-radius: 999px;
+      padding: 6px 12px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: .9rem;
+      margin-bottom: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    /* About */
+    .about{
+      background: var(--card);
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* Gallery */
+    .gallery{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .photo-card{
+      background: var(--card);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      text-align: left;
+    }
+    .photo-card img{ width: 100%; height: 170px; object-fit: cover; display:block; }
+    .caption{ padding: 10px 12px; font-size: 0.95rem; color: var(--muted); }
+
+    /* Footer / contact */
+    footer{ text-align: center; color: var(--muted); font-size: 0.95rem; padding-top: 8px; }
+
+    /* small screens */
+    @media (max-width:640px){
+      h1{ font-size: 1.6rem; }
+      .hero{ padding: 14px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <!-- EDIT: change your site title here -->
+      <h1>Hannah &amp; Zak Travels</h1>
+      <!-- EDIT: short subtitle / tagline -->
+      <div class="subtitle">Exploring the world together — photos, tips, and tiny stories.</div>
+    </header>
 
-    <h1>Hannah & Zak Travels</h1>
-    <p>Welcome to our journey. Photos and stories coming soon.</p>
+    <section class="hero" aria-label="Introduction">
+      <div class="intro">
+        <!-- Small badge (optional) -->
+        <div class="badge">Travel &amp; Stories</div>
 
-    <div class="gallery">
+        <!-- EDIT: change this paragraph to something about you -->
+        <p style="margin:0; font-size:1.05rem;">
+          Hi — we're Hannah and Zak. We're traveling slowly, collecting photographs and food recommendations. This site is a simple place where we share highlights and photos from our trips.
+        </p>
+      </div>
+    </section>
+
+    <!-- About: quick editable section -->
+    <section class="about" aria-label="About">
+      <h2 style="margin-top:0; font-size:1.1rem;">About us</h2>
+      <p style="margin:0;">
+        <!-- EDIT: replace this with a sentence or two about you, where you're from, travel style, etc. -->
+        We love short walks, long lunches, and getting off the beaten path. Currently based in [your city], we try to visit one new country a year and take lots of photos.
+      </p>
+    </section>
+
+    <!-- Gallery: swap the image URLs below with your own photos or Unsplash links -->
+    <section aria-label="Gallery">
+      <h2 style="margin:0 0 12px 0;">Gallery</h2>
+
+      <div class="gallery">
+        <!-- EDIT: replace the src value with your own image link; keep the caption text -->
         <div class="photo-card">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Sample landscape">
-            <p style="font-size: 0.9rem; margin-top: 10px;">On the road</p>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1400&q=60&auto=format&fit=crop" alt="On the road">
+          <div class="caption">On the road — [Place, Year]</div>
         </div>
-    </div>
 
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=60&auto=format&fit=crop" alt="Beach sunset">
+          <div class="caption">Sunset at the coast</div>
+        </div>
+
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1400&q=60&auto=format&fit=crop" alt="City street">
+          <div class="caption">Market morning</div>
+        </div>
+
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=1400&q=60&auto=format&fit=crop" alt="Mountains">
+          <div class="caption">Hike with a view</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Social: edit email and links -->
+    <section aria-label="Contact" style="margin-bottom:24px;">
+      <h2 style="margin:0 0 8px 0;">Contact</h2>
+      <p style="margin:0 0 6px 0;">Want to say hi or suggest a place to visit? Email us at <strong><a href="mailto:you@example.com">you@example.com</a></strong>.</p>
+      <p style="margin:6px 0 0 0; color:var(--muted); font-size:0.95rem;">
+        Follow us: 
+        <!-- EDIT: replace # with your profiles -->
+        <a href="#" style="color:var(--accent); text-decoration:none;">Instagram</a> · 
+        <a href="#" style="color:var(--accent); text-decoration:none;">X</a>
+      </p>
+    </section>
+
+    <footer>
+      <!-- small footer text -->
+      <div>&copy; <span id="year"></span> Hannah &amp; Zak — Built with ❤️</div>
+    </footer>
+  </div>
+
+  <script>
+    // small script to set the year automatically — no need to edit
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
